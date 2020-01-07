@@ -1,1 +1,32 @@
-<h1>Racket List</h1>
+<h1>桌球拍收納庫</h1>
+
+<%= link_to "新增球拍", new_racket_path  %>
+
+<table>
+  <thead>
+    <tr>
+      <td>品牌</td>
+      <td>名稱</td>
+      <td>首字編碼</td>
+      <td>握柄</td>
+      <td>結構</td>
+      <td>拍重</td>
+      <td>拍面大小</td>
+      <td>厚度</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rackets.each do |racket| %>
+    <tr>
+      <td> <%= racket.brand %> </td>
+      <td> <%= racket.product %> </td>
+      <td> <%= racket.code %> </td>
+      <td> <%= racket.type %> </td>
+      <td> <%= racket.material %> </td>
+      <td> <%= racket.weight %> </td>
+      <td> <%= racket.size %> </td>
+      <td> <%= racket.thickness %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
