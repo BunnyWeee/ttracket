@@ -1,0 +1,43 @@
+<%= form_for racket do |racket| %>
+  <div>
+    <%= racket.label :brand, "品牌" %>
+    <%= racket.text_field :brand %>
+  </div>
+  
+  <div>
+    <%= racket.label :product, "產品名稱" %>
+    <%= racket.text_field :product %>
+  </div>
+
+  <div>
+    <%= racket.label :code, "編碼" %>
+    <%= racket.text_field :code %>
+  </div>
+
+  <div>
+    <%= racket.label :grip, "握柄" %>
+    <%= racket.text_field :grip %>
+  </div>
+
+  <div>
+    <%= racket.label :material, "結構" %>
+    <%= racket.text_field :material %>
+  </div>
+
+  <div>
+    <%= racket.label :weight, "拍重" %>
+    <%= racket.text_field :weight %>
+  </div>
+
+  <div>
+    <%= racket.label :size, "拍面大小" %>
+    <%= racket.text_field :size %>
+  </div>
+
+  <div>
+    <%= racket.label :thickness, "厚度" %>
+    <%= racket.text_field :thickness %>
+  </div>
+
+  <%= racket.submit %>
+<% end %>

@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <td>品牌</td>
-      <td>名稱</td>
-      <td>首字編碼</td>
+      <td>產品名稱</td>
+      <td>編碼</td>
       <td>握柄</td>
       <td>結構</td>
       <td>拍重</td>
@@ -21,11 +21,15 @@
       <td> <%= racket.brand %> </td>
       <td> <%= racket.product %> </td>
       <td> <%= racket.code %> </td>
-      <td> <%= racket.type %> </td>
+      <td> <%= racket.grip %> </td>
       <td> <%= racket.material %> </td>
-      <td> <%= racket.weight %> </td>
+      <td> <%= racket.weight %>克</td>
       <td> <%= racket.size %> </td>
       <td> <%= racket.thickness %> </td>
+      <td>
+        <%= link_to "編輯", edit_racket_path(racket) %>
+        <%= link_to "刪除", racket_path(racket), method:"delete",data: { confirm:"確認刪除？" } %>
+      </td>
     </tr>
     <% end %>
   </tbody>

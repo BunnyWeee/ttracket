@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_07_072424) do
+ActiveRecord::Schema.define(version: 2020_01_07_121045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rackets", force: :cascade do |t|
-    t.string "brand"
+    t.integer "brand", default: 1
     t.string "product"
     t.integer "code", default: 0
-    t.integer "type", default: 0
+    t.integer "grip", default: 0
     t.integer "material", default: 0
     t.integer "weight"
     t.string "size"
