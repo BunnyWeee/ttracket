@@ -1,4 +1,5 @@
 class RacketsController < ApplicationController
+  before_action :find_racket, only: [:edit, :update, :destroy]
 
   def index
     @rackets = Racket.all
@@ -19,12 +20,9 @@ class RacketsController < ApplicationController
   end
 
   def edit
-    @racket = Racket.find_by(id: params[:id])
   end
 
   def update
-    @racket = Racket.find_by(id: params[:id])
-
     if @racket.update(racket_params)
       redirect_to rackets_path,notice: "更新資料成功！"
     else
@@ -33,7 +31,6 @@ class RacketsController < ApplicationController
   end
 
   def destroy
-    @racket = Racket.find_by(id: params[:id])
     @racket.destroy if @racket
     redirect_to rackets_path, notice: "球拍資料刪除成功！"
   end
@@ -44,4 +41,7 @@ class RacketsController < ApplicationController
     params.require(:racket).permit(:brand, :product, :code, :grip, :material, :weight, :size, :thickness)
   end
 
+  def find_racket
+    @racket = Racket.find_by(id: params[:id])
+  end
 end
