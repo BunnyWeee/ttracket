@@ -1,6 +1,6 @@
 <h1>桌球拍收納庫</h1>
 
-<%= link_to "新增球拍", new_racket_path, class: "btn btn-sm btn-primary"  %>
+<%= link_to "<span class='glyphicon glyphicon-plus'></span>新增球拍".html_safe, new_racket_path, class: "btn btn-sm btn-primary"  %>
 
 <table class="table" >
   <thead>
@@ -27,7 +27,8 @@
       <td> <%= racket.size %> </td>
       <td> <%= racket.thickness %> </td>
       <td>
-        <%= link_to "編輯", edit_racket_path(racket), class: "btn btn-sm btn-warning" %>
+        <%= link_to "<span class='glyphicon glyphicon-pencil'></span>編輯".html_safe,
+            edit_racket_path(racket), class: "btn btn-sm btn-warning" %>
         <%= link_to "刪除", racket_path(racket), method:"delete",data: { confirm:"確認刪除？" } %>
       </td>
     </tr>
