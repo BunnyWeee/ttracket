@@ -1,37 +1,34 @@
 <%= simple_form_for racket do |racket| %>
-  <div class="form-group col-sm-6">
+  <div class="form-group">
     <%= racket.input :brand, label: "品牌" %>
   </div>
 
-  <div class="form-group col-sm-6">
+  <div class="form-group">
     <%= racket.input :product, label: "產品名稱" %>
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :code, label: "編碼" %>
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :grip, label: "握柄" %>
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :material, label: "結構" %>
   </div>
   
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :weight, label: "拍重" %>
   </div>
   
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :size, label: "拍面大小" %>
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group">
     <%= racket.input :thickness, label: "厚度" %>
   </div>
-
-  <div class="form-group">
     <%= racket.submit %>
-  </div>
 <% end %>

@@ -7,6 +7,10 @@ class Racket < ApplicationRecord
   enum material: { '5 ply wood':0, '7 ply wood':1, ALC:2, ZLC:3, SuperZLC:4, InnerCarbon:5 }
   enum thickness: { '5.2':0, '5.3':1}
   
+  validates :brand, presence: true
+  validates :product, length: { in: 1..20 } , presence: true
+  validates :grip, presence: true
+
   private
   def uppercase_grip
     grip.upcase
