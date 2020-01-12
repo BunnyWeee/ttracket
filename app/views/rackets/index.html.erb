@@ -18,6 +18,7 @@
   <tbody>
     <% @rackets.each do |racket| %>
     <tr>
+      <td> <%= link_to "幫我貼皮", "#", class:" btn btn-sm btn-primary " %> </td>
       <td> <%= racket.brand %> </td>
       <td> <%= racket.product %> </td>
       <td> <%= racket.code %> </td>
