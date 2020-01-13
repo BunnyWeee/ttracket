@@ -6,4 +6,9 @@ module ApplicationHelper
       end
     end
   end
+
+  def if_butterfly(event)
+    
+  end
+
 end

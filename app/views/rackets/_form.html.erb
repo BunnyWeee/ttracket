@@ -1,6 +1,7 @@
 <%= simple_form_for racket do |racket| %>
   <div class="form-group">
     <%= racket.input :brand, label: "品牌" %>
+    <%= if_butterfly(racket) %>
   </div>
 
   <div class="form-group">

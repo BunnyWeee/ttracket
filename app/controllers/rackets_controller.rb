@@ -32,7 +32,10 @@ class RacketsController < ApplicationController
 
   def destroy
     @racket.destroy if @racket
-    redirect_to rackets_path, notice: "球拍資料刪除成功！"
+    respond_to do |format|
+      format.js
+      redirect_to rackets_path, notice: "球拍資料刪除成功！"  
+    end 
   end
 
   private

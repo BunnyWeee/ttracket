@@ -29,8 +29,12 @@
       <td> <%= racket.thickness %> </td>
       <td>
         <%= link_to "<span class='glyphicon glyphicon-pencil'></span>編輯".html_safe,
-            edit_racket_path(racket), class: "btn btn-sm btn-warning" %>
-        <%= link_to "刪除", racket_path(racket), method:"delete",data: { confirm:"確認刪除？" } %>
+            edit_racket_path(racket), 
+            class: "btn btn-sm btn-warning" %>
+        <%= link_to "刪除", racket_path(racket), 
+            method:"delete",
+            data: { confirm:"確認刪除？" }, 
+            remote: true, class: "delete" %>
       </td>
     </tr>
     <% end %>
