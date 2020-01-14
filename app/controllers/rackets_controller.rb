@@ -15,7 +15,10 @@ class RacketsController < ApplicationController
     if @racket.save
       redirect_to rackets_path,notice: "新增球拍成功！"
     else
-      render :new
+      respond_to do |format|
+        format.html {render :new}
+        format.js
+      end
     end
   end
 

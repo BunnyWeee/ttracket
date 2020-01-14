@@ -1,5 +1,17 @@
-<%= simple_form_for racket do |racket| %>
-  <div class="form-group">
+<% if @racket.errors.present? %>
+  <ul>
+    <% @racket.errors.each do |error, message| %>
+      <li>
+        <%= t("#{error} ") + t('rackets.validate.error') + " #{message}" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "push me!", '#', :id => "ajax-load",  class:"btn btn-sm btn-danger"%>
+
+<%= simple_form_for(racket, remote: true, html: { class:"racket-model-form" } ) do |racket| %>
+  <div class="brand form-group">
     <%= racket.input :brand, label: "品牌" %>
     <%= if_butterfly(racket) %>
   </div>
@@ -8,8 +20,11 @@
     <%= racket.input :product, label: "產品名稱" %>
   </div>
 
-  <div class="form-group">
+  <div class="code form-group">
     <%= racket.input :code, label: "編碼" %>
+  </div>
+  
+  <div id="content">
   </div>
 
   <div class="form-group">
@@ -32,4 +47,16 @@
     <%= racket.input :thickness, label: "厚度" %>
   </div>
     <%= racket.submit %>
+
+  <script>
+  $( '#ajax-load' ).click(function(e){
+    e.preventDefault();
+    var url = $(this).attr("href");
+    $.ajax( url, {
+      success: function(response){
+        $( '#content' ).html(response);
+      }
+    })
+  })
+  </script>
 <% end %>
