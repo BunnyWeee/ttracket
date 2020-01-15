@@ -47,16 +47,5 @@
     <%= racket.input :thickness, label: "厚度" %>
   </div>
     <%= racket.submit %>
-
-  <script>
-  $( '#ajax-load' ).click(function(e){
-    e.preventDefault();
-    var url = $(this).attr("href");
-    $.ajax( url, {
-      success: function(response){
-        $( '#content' ).html(response);
-      }
-    })
-  })
-  </script>
+    
 <% end %>
