@@ -1,0 +1,51 @@
+<% if @racket.errors.present? %>
+  <ul>
+    <% @racket.errors.each do |error, message| %>
+      <li>
+        <%= t("#{error} ") + t('rackets.validate.error') + " #{message}" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "push me!", '#', :id => "ajax-load",  class:"btn btn-sm btn-danger"%>
+
+<%= simple_form_for(racket, remote: true, html: { class:"racket-model-form" } ) do |racket| %>
+  <div class="brand form-group">
+    <%= racket.input :brand, label: "品牌" %>
+    <%= if_butterfly(racket) %>
+  </div>
+
+  <div class="form-group">
+    <%= racket.input :product, label: "產品名稱" %>
+  </div>
+
+  <div class="code form-group">
+    <%= racket.input :code, label: "編碼" %>
+  </div>
+  
+  <div id="content">
+  </div>
+
+  <div class="form-group">
+    <%= racket.input :grip, label: "握柄" %>
+  </div>
+
+  <div class="form-group">
+    <%= racket.input :material, label: "結構" %>
+  </div>
+  
+  <div class="form-group">
+    <%= racket.input :weight, label: "拍重" %>
+  </div>
+  
+  <div class="form-group">
+    <%= racket.input :size, label: "拍面大小" %>
+  </div>
+
+  <div class="form-group">
+    <%= racket.input :thickness, label: "厚度" %>
+  </div>
+    <%= racket.submit %>
+    
+<% end %>
