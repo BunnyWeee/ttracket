@@ -8,7 +8,7 @@ class Racket < ApplicationRecord
   enum thickness: { '5.2':0, '5.3':1}
   
   validates :brand, presence: true
-  validates :product, length: { in: 1..20 } , presence: true
+  validates :product, length: { in: 1..20 },format: { with: /\A[A-Z0-9]+\z/, message: :uppercaseonly } , presence: true
   validates :grip, presence: true
 
   private
