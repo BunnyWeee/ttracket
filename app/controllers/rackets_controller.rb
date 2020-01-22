@@ -2,7 +2,7 @@ class RacketsController < ApplicationController
   before_action :find_racket, only: [:edit, :update, :destroy]
 
   def index
-    @rackets = Racket.all
+    @rackets = Racket.page(params[:page]).per(5)
   end
 
   def new
