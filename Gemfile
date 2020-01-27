@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'enum_help', '~> 0.0.17'
 gem 'kaminari'
+gem 'rails-i18n', '~> 6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
