@@ -8,7 +8,7 @@ class Racket < ApplicationRecord
   enum thickness: { '5.2':0, '5.3':1}
   
   validates :brand, presence: true
-  validates :product, length: { in: 1..20 } , presence: true
+  validates :product, length: { in: 1..20 }, presence: true
   validates :grip, presence: true
 
   private

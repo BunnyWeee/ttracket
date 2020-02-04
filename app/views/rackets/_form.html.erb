@@ -8,12 +8,10 @@
   </ul>
 <% end %>
 
-<%= link_to "push me!", '#', :id => "ajax-load",  class:"btn btn-sm btn-danger"%>
 
-<%= simple_form_for(racket, remote: true, html: { class:"racket-model-form" } ) do |racket| %>
+<%= simple_form_for(racket, html: { class:"racket-model-form" } ) do |racket| %>
   <div class="brand form-group">
     <%= racket.input :brand, label: "品牌" %>
-    <%= if_butterfly(racket) %>
   </div>
 
   <div class="form-group">
@@ -36,16 +34,36 @@
   </div>
   
   <div class="form-group">
-    <%= racket.input :weight, label: "拍重" %>
+    <%= racket.input :weight, label: "拍重", placeholder: "請輸入空拍重量(g)" %>
   </div>
   
   <div class="form-group">
-    <%= racket.input :size, label: "拍面大小" %>
+    <%= racket.input :size, label: "拍面大小", placeholder: "157*150" %>
   </div>
 
   <div class="form-group">
     <%= racket.input :thickness, label: "厚度" %>
   </div>
     <%= racket.submit %>
+
+  <script>
+  // $('#ajax-load').click(function(){
+  //   $.ajax('hello.html.erb', {
+  //     success: function(response) {
+  //       $('#content').html(response).slideDown();
+  //     }
+  //   })
+  // })
+  $('#ajax-load').click(function(e){
+    e.preventDefault()
+    var url = $(this).attr("href")
+    $.ajax(url,{
+      success: function(response){
+        $('#content').html(response)
+      }
+    })
+  })
+
+  </script>
     
 <% end %>

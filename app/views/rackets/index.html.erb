@@ -37,6 +37,13 @@
             remote: true, class: "delete" %>
       </td>
     </tr>
+    
     <% end %>
   </tbody>
 </table>
+
+<div class="ver", style="text-align:center">
+  <%= link_to "中文版",'#' %>
+  <%= link_to "英文版",'#' %>
+</div>
+<%= paginate @rackets,window: 2, remote: true %>
